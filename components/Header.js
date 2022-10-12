@@ -6,7 +6,8 @@ const Header = () => {
     <div>
       <h1 className={headerStyles.title}>
         <a href="https://en.wikipedia.org/wiki/Non-fungible_token"
-          target="_blank">
+          target="_blank"
+          rel="noreferrer">
         <span>NFT</span>  
         </a>
         &nbsp;Rug Curriculum
