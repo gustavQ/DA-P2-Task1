@@ -1,0 +1,18 @@
+.footer {
+    display: flex;
+    flex: 1;
+    padding: 2rem 0;
+    justify-content: center;
+    align-items: center;
+  
+  a {
+    justify-content: center;
+    align-items: center;
+  }
+
+  a:hover,
+  a:active {
+    cursor: pointer; 
+    font-weight: bold;
+  }
+}
