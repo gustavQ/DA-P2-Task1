@@ -20,7 +20,7 @@ export default function Home({rugs}) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const res = await fetch(`${server}/api/rugs`)
   const rugs = await res.json()
   return {
