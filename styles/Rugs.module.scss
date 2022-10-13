@@ -33,15 +33,16 @@
       font-size: 1.25rem;
       line-height: 1.5;
     }
+}
 
-    img {
-      width: 200px;
-      margin: 0px 15px 0px 0px;
-      border: 2px solid #000;
+.pfp {
+  position: relative;
+  min-width: 200px;
+  margin: 0px 15px 0px 0px;
+  border: 2px solid #000;
 
-      @include respond-to('mobile') {
-        width: 100%;
-        margin: 0px 0px 15px 0px;
-      }
-    }
+  @include respond-to('mobile') {
+    min-width: 100%;
+    margin: 0px 0px 15px 0px;
   }
+}

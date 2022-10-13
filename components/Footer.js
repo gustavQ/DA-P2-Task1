@@ -1,4 +1,3 @@
-import Image from 'next/Image'
 import footerStyles from '../styles/Footer.module.scss'
 
 
