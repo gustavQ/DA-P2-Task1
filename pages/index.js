@@ -21,11 +21,14 @@ export default function Home({rugs}) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${server}/api/rugs`)
-  const rugs = await res.json()
-  return {
-    props: {
-      rugs
-    },
+  try {
+    const res = await fetch(`${server}/api/rugs`)
+    const rugs = await res.json()
+    if (!rugs) {
+      return { notFound: true };
+    }
+    return { props: { rugs } };
+  } catch {
+    return { notFound: true };
   }
 };
