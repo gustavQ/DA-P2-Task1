@@ -1,8 +1,15 @@
 import Image from 'next/image'
 import rugsStyles from '../styles/Rugs.module.scss'
+import { useState } from 'react'
+import Modal from './Modal'
+import RugModal from './RugModal'
 
 const RugItem = ({ rug }) => {
+  const [showModal, setShowModal] = useState(false)
+
   return (
+  <>
+  <button onClick={() => setShowModal(true)} type="button"> 
     <div className={rugsStyles.card}>
         <div className={rugsStyles.pfp}>
           <Image  src={rug.nft_pfp} alt="none" width="100%" height="100%" layout="responsive" objectFit="contain"/>
@@ -12,6 +19,14 @@ const RugItem = ({ rug }) => {
           <p>{rug.nft_rug_descr}</p>
         </div>
     </div>
+  </button>
+  <Modal
+    onClose={() => setShowModal(false)}
+    show={showModal}
+    title={rug.nft_name}>
+      <RugModal Id={rug._id} />
+  </Modal>
+  </>
   )
 }
 

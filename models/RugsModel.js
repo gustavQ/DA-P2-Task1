@@ -1,12 +1,15 @@
-import { Schema, model, models, ObjectId } from 'mongoose';
+import mongoose from 'mongoose';
 
-const rugSchema = new Schema({
-  _id: ObjectId,
-  nft_pfp: String,
-  nft_name: String,
-  nft_rug_descr: String,
+const RugSchema = new mongoose.Schema({
+  nft_pfp: {
+    type: String,
+  },
+  nft_name: {
+    type: String,
+  },
+  nft_rug_descr: {
+    type: String,
+  },
 });
 
-const Rug = models.Rug || model('Rug', rugSchema);
-
-export default Rug;
+export default mongoose.models.Rug || mongoose.model('Rug', RugSchema);
