@@ -1,4 +1,5 @@
 import useSWR from 'swr'
+import ImageFallback from './ImageFallback'
 
 const fetcher = async (api) => 
    await fetch(api)
@@ -16,7 +17,20 @@ const RugModal= ({ Id }) => {
   if(!rug) return <p>Loading...</p>
 
   return (
-    <p>{rug.nft_rug_descr}</p>
+    <div className='max-w-md flex flex-col gap-y-4'>
+      <div className='content-start'>
+        <ImageFallback  src={rug.nft_pfp} 
+									alt="none" 
+									width="100%" 
+									height="100%" 
+									layout="responsive" 
+									objectFit="contain"/>
+
+      </div>
+      <div>
+        <p>{rug.nft_rug_descr}</p>
+      </div>
+    </div>
   )
 }
 

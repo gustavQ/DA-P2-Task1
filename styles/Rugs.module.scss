@@ -3,21 +3,21 @@
 .grid {
   margin: 20px 0px;
   display: flex;
-  align-items: stretch;
+  flex-wrap: wrap;
   justify-content: center;
-  flex-direction: column;
   width: 100%;
 }
 
 .card {
-    margin: 1rem;
+    margin: 0.6rem;
     padding: 1.5rem;
-    text-align: left;
     color: inherit;
     text-decoration: none;
     border: 1px solid #eaeaea;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     @include respond-to('mobile') {
       flex-direction: column;
@@ -33,16 +33,19 @@
       font-size: 1.25rem;
       line-height: 1.5;
     }
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: #0070f3;
+    }
 }
 
 .pfp {
-  position: relative;
-  min-width: 200px;
-  margin: 0px 15px 0px 0px;
+  min-width: 180px;
   border: 2px solid #000;
 
   @include respond-to('mobile') {
     min-width: 100%;
-    margin: 0px 0px 15px 0px;
   }
 }

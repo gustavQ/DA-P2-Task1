@@ -21,7 +21,6 @@ export async function getServerSideProps({ params }) {
   await dbConnect()
 
   const rug = await Rug.findById(params.id).lean()
-  rug._id = rug._id.toString()
 
   return { props: { rug } }
 }

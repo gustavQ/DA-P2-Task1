@@ -1,10 +1,17 @@
 import { useState } from 'react'
 import AddButton from './AddButton'
 import Modal from './Modal'
+import Form from './Form'
 
 const FormModal = () => {
   const [showModal, setShowModal] = useState(false)
-
+  
+  const rugForm = {
+    nft_name: '',
+    nft_pfp: '',
+    nft_rug_descr: '',
+  }
+  
   const onClick = () => {
     setShowModal(true)
   }
@@ -15,8 +22,8 @@ const FormModal = () => {
       <Modal 
         onClose={() => setShowModal(false)}
         show={showModal}
-        title={"Submit Testimonial"}>
-        <h1>hello</h1>
+        title={"Add New Rug"}>
+          <Form rugForm={rugForm} />
       </Modal>
     </>
   )
