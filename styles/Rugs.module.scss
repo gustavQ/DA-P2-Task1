@@ -10,7 +10,8 @@
 
 .card {
     margin: 0.6rem;
-    padding: 1.5rem;
+    padding: 1rem;
+    min-width: 200px;
     color: inherit;
     text-decoration: none;
     border: 1px solid #eaeaea;
@@ -20,7 +21,9 @@
     align-items: center;
 
     @include respond-to('mobile') {
-      flex-direction: column;
+      margin: 0.2rem;
+      padding: 0.2rem;
+      min-width: 140px;
     }
 
     h2 {
@@ -42,10 +45,15 @@
 }
 
 .pfp {
+  min-width: 100%;
+  border: 2px solid #000;
+}
+
+/*.pfp {
   min-width: 180px;
   border: 2px solid #000;
 
   @include respond-to('mobile') {
-    min-width: 100%;
+    min-width: 120px;
   }
-}
+}*/
